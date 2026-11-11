@@ -1,69 +1,336 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>career.com</title>
-</head>
-<body>
-    <header>
-        <h1>Full Stack Developments course</h1>
-        <p>Student Registration Form</p>
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <h1>Created the Account </h1>
-    <form action="page3.html" method="post">
-        <label for="Full Name">Full Name:</label>
-        <input type="text" id="Full Name" name="Full Name   " required>
-        <br><br>
-        <label for="emailid">Email id:</label>
-        <input type="text" id="emailid" name="email" required>
-        <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <br><br>
-        <label for ="date of birth">Date of Birth:</label>
-        <input type="date" id="date of birth" name="date of birth" required>
-        <br><br>
-        <p>Gender:</p>
-        <input type="radio" id="male" name="gender" value="male" required>
-        <label for="male">Male</label>      
-        <input type="radio" id="female" name="gender" value="female" required>
-        <label for="female">Female</label>
-        <input type="radio" id="other" name="gender" value="other" required>
-        <label for="other">Other</label>
-        <br><br>
-        <!--checkbox-->
-        <p>Technical Skills:</p>
-        <input type="checkbox" id="html" name="html" value="html">  
-        <label for="html">HTML</label>
-        <input type="checkbox" id="css" name="css" value="css">  
-        <label for="css">CSS</label>    
-        <input type="checkbox" id="javascript" name="javascript" value="javascript">  
-        <label for="javascript">JavaScript</label>  
-        <input type="checkbox" id="python" name="python" value="python">
-        <label for="python">Python</label>
-        <input type="checkbox" id="java" name="java" value="java">  
-        <label for="java">Java</label>
-        <br><br>
-        <label for="country">Country:</label>
-        <Select id="country" name="country" required>
-            <option value="">Select Country</option>
-            <option value="India">India</option>
-            <option value="USA">USA</option>
-            <option value="UK">UK</option>
-            <option value="Canada">Canada</option>
-            <option value="Australia">Australia</option>
-            <option value="Germany">Germany</option>
-        </Select>
-        <br><br>
-        <p>About Yourself:</p>
-        <textarea id="About Yourself" name="About Yourself" rows="4" cols="50" required></textarea>
-        <br><br>
-        <input type="Register Now" value="Register Now">
-        <input type="Clear Form" value="Clear Form">
+    <title>Student Registration Form</title>
+
+    <style>
+
+        /* BASIC RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BODY BACKGROUND */
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    ellipse at bottom left,
+                    #5650FC,
+                    transparent 60%
+                ),
+                #FF6636;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            padding: 30px 15px;
+        }
+
+        /* MAIN TITLE */
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        /* FORM CONTAINER */
+        .form-container {
+            max-width: 650px;
+            width: 100%;
+            margin: auto;
+
+            background: #ffffff;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* FORM HEADING */
+        h2 {
+            text-align: center;
+            font-size: 26px;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        /* LABEL AND INPUT ALIGNMENT */
+        .form-group {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        /* LABEL */
+        label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* INPUT FIELDS */
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 11px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            font-family: Arial, sans-serif;
+        }
+
+        /* FOCUS EFFECT */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #5650FC;
+
+            box-shadow:
+                0 0 5px rgba(86,80,252,0.3);
+        }
+
+        /* RADIO AND CHECKBOX */
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .options label {
+            font-size: 15px;
+            font-weight: normal;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .options input {
+            width: auto;
+        }
+
+        /* TEXTAREA */
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .register-btn {
+            background: #FF6636;
+            color: white;
+        }
+
+        .clear-btn {
+            background: #333;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <div class="form-container">
+
+        <h2>Create Your Account</h2>
+
+        <form>
+
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name"
+                       placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password"
+                       placeholder="Enter password">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob">
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+
+                <div class="options">
+                    <label>
+                        <input type="radio" name="gender"
+                               value="Male"> Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender"
+                               value="Female"> Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender"
+                               value="Other"> Other
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Technical Skills:</label>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> HTML
+                    </label>
+
+                    <label>
+                        <input type="checkbox"> CSS
+                    </label>
+
+                    <label>
+                        <input type="checkbox"> JavaScript
+                    </label>
+
+                    <label>
+                        <input type="checkbox"> Python
+                    </label>
+
+                    <label>
+                        <input type="checkbox"> Java
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+
+                <select id="country">
+                    <option value="">Select Country</option>
+                    <option>India</option>
+                    <option>UAE</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="about">About Yourself:</label>
+
+                <textarea id="about"
+                    placeholder="Write about yourself...">
+                </textarea>
+            </div>
+
+            <div class="buttons">
+
+                <button type="submit"
+                        class="register-btn">
+                    Register Now
+                </button>
+
+                <button type="reset"
+                        class="clear-btn">
+                    Clear Form
+                </button>
+
+            </div>
+
+        </form>
+
         <footer>
-            <p>&copy; 2026Full Stack Development Course. All rights reserved.</p>
+            © 2026 Full Stack Development Course.
+            All rights reserved.
         </footer>
-    </form>  
+
+    </div>
+
 </body>
 </html>
