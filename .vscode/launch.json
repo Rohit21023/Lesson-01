@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Login Page in Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "file": "c:\\Users\\hi\\FullStack-Course\\Lesson-01\\page3.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
