@@ -5,7 +5,7 @@
             "name": "Run Login Page in Chrome",
             "type": "chrome",
             "request": "launch",
-            "file": "c:\\Users\\hi\\FullStack-Course\\Lesson-01\\page3.html",
+            "file": "c:\\Users\\hi\\FullStack-Course\\Lesson-01\\page4.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
