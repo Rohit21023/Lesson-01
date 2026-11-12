@@ -5,9 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partical Task</title>
 </head>
+<style>
+    body {
+        background-color: #2A7B9B;
+        font-family: Arial, sans-serif;
+        text-align:left;
+        padding: 50px;
+    }
+    img {
+        margin-bottom: 20px;
+    }
+    h2 {
+        background-color: #e0e4e6;
+        font-family: Arial, sans-serif;
+        text-align:right;
+        padding: 50px;
+    }
+   
+</style>
 <body>
+    <img src="img/logo.png" alt="Rohit Academy Logo" width="48" height="48">
      <h3>Rohit Academy</h3>
-     <h1>Welcome to Rohit Academy</h1>
-     <h6>Your gateway to success in university studies</h6>
+     <h1>Welcome to Rohit Academy </h1>
+     <h4>Your gateway to success in university studies</h4>
+     <h5>Expert-led university tutorials</h5>
+     <h5>Comprehensive study materials</h5>
+     <h5>Join a community of learners</h5>
+
+     <div class="tab-buttons">
+        <button type = button class ="tab-button active"  id="signup-tab" onclick="ShowForm('signup')">Sign Up</button>
+        <button  type = button class ="tab-button" id="register-tab" onclick="ShowForm('register')">Register</button>
+        </div>  
+
+      <!-- Sign Up Form -->
+    <h2>Sign Up</h2>    
+    <form action="page4.html" method="post">
+        <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br><br>
+    </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>    
+        <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Remember me</label>
+        </div>
+        <div>
+             <a href="page4.html">Forgot Password?</a>
+        </div>
+        <input type="submit" value="Sign Up">
+    </form>
+    <!-- Register Form -->
+    <h2>Register</h2>   
+    <form action="page4.html" method="post">
+        <div>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div>
+        <label for="emailaddress">Email Address:</label>
+        <input type="text" id="emailaddress" name="Email Address" required>
+        </div>
+        <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+        <label for="confrimpassword">Confirm Password:</label>
+        <input type="password" id="confrimpassword" name="confirm-password" required>
+        </div>
+        <input type="submit" value="Create Account">
 </body>
 </html>
